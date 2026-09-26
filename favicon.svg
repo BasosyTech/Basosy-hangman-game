@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <linearGradient id="logoBgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#24a4a9" />
+      <stop offset="100%" stop-color="#146d70" />
+    </linearGradient>
+    <filter id="logoShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="5" stdDeviation="4" flood-color="#000000" flood-opacity="0.25" />
+    </filter>
+  </defs>
+  <rect width="200" height="200" rx="46" fill="url(#logoBgGrad)" />
+  <g filter="url(#logoShadow)">
+    <path d="M42 126 L116 126" stroke="#ffffff" stroke-width="8" stroke-linecap="round" />
+    <path d="M68 126 L68 34" stroke="#ffffff" stroke-width="8" stroke-linecap="round" />
+    <path d="M64 34 L138 34" stroke="#ffffff" stroke-width="8" stroke-linecap="round" />
+    <path d="M68 64 L94 34" stroke="#ffffff" stroke-width="6" stroke-linecap="round" />
+    <path d="M132 34 L132 58" stroke="#f6c445" stroke-width="5" stroke-linecap="round" />
+    <circle cx="132" cy="70" r="11" fill="none" stroke="#f6c445" stroke-width="5" />
+    <path d="M95 144 C95 139 105 138 105 143 C105 147 100 148 100 151"
+          fill="none" stroke="#ffffff" stroke-width="3.5" stroke-linecap="round" />
+    <circle cx="100" cy="156" r="2.2" fill="#ffffff" />
+    <g stroke="#ffffff" stroke-width="6" stroke-linecap="round" opacity="0.95">
+      <line x1="52" y1="172" x2="76" y2="172" />
+      <line x1="88" y1="172" x2="112" y2="172" />
+      <line x1="124" y1="172" x2="148" y2="172" />
+    </g>
+  </g>
+</svg>
