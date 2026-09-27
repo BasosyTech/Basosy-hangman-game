@@ -130,7 +130,9 @@ const showResultModal = (() => {
         modalElements.stats.textContent = `نجوت بصعوبة مع ${getMistakesText(gameState.wrongAttempts)} من أصل ${gameState.maxAttempts}!`;
       }
     }
-    resultModal.showModal();
+    setTimeout(() => {
+      resultModal.showModal();
+    }, 500);
   };
 })();
 setCategories();
