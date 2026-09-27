@@ -70,7 +70,8 @@ window.addEventListener("keydown", (e) => {
   }
   if (
     englishLetters.includes(e.key.toLowerCase()) &&
-    gameSection.hidden === false
+    gameSection.hidden === false &&
+    resultModal.open === false
   ) {
     hintDialog.show();
     setTimeout(() => hintDialog.close(), 1500);
@@ -122,11 +123,11 @@ const showResultModal = (() => {
         modalElements.stats.textContent =
           "🌟 عبقري! خمنت الكلمة بدون أي خطأ 🌟";
       } else if (wrongRatio < 0.4) {
-        modalElements.stats.textContent = `أحسنت! خمنت الكلمة مع ${gameState.wrongAttempts} أخطاء فقط.`;
+        modalElements.stats.textContent = `أحسنت! خمنت الكلمة مع ${getMistakesText(gameState.wrongAttempts)} فقط.`;
       } else if (wrongRatio < 0.7) {
-        modalElements.stats.textContent = `جيد جداً! أنهيت الجولة مع ${gameState.wrongAttempts} أخطاء.`;
+        modalElements.stats.textContent = `جيد جداً! أنهيت الجولة مع ${getMistakesText(gameState.wrongAttempts)}.`;
       } else {
-        modalElements.stats.textContent = `تمكنت من النجاة بصعوبة مع ${gameState.wrongAttempts} أخطاء من أصل ${gameState.maxAttempts}!`;
+        modalElements.stats.textContent = `نجوت بصعوبة مع ${getMistakesText(gameState.wrongAttempts)} من أصل ${gameState.maxAttempts}!`;
       }
     }
     resultModal.showModal();
@@ -266,4 +267,9 @@ function resetGame() {
   lettersContainer.classList.remove("finished");
   drawElements.forEach((element) => element.classList.remove("show"));
   resultModal.close();
+}
+function getMistakesText(count) {
+  if (count === 1) return "خطأ واحد";
+  if (count === 2) return "خطأين";
+  return `${count} أخطاء`;
 }
